@@ -1,0 +1,32 @@
+.todo__list-items__item {
+    width: 300px;
+    list-style:none;
+    background-color: #dfd;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+
+    &__content {
+      flex-grow: 1;
+
+      &_elem.id {
+        color: grey;
+      }
+    }
+
+    &__controls {
+      display: flex;
+      flex-direction: column;
+      padding: 3px;
+
+      &_button {
+        width: 50px;
+        height: 20px;
+        border: none;
+      }
+
+      &_button:not(:last-child) {
+        margin-bottom: 3px;
+      }
+    }
+}
