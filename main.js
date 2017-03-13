@@ -7,19 +7,20 @@ import { AppContainer } from 'react-hot-loader';
 import reducers from './reducers'
 import './style/main.scss'
 
+import { getAllTodos } from './actions/todos.js'
+
 import api from 'services/apiService.js';
 
-console.log(api);
-
-const preloadedState = {
+/*const preloadedState = {
 	todos: [
 		{ text: 'first', id: 1 },
 	]
-}
+}*/
 
-const store = createStore(reducers, preloadedState, (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose)(applyMiddleware(thunkMiddleware)));
+const store = createStore(reducers, (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose)(applyMiddleware(thunkMiddleware)));
 
 render();
+init();
 
 if (module.hot) {
 	module.hot.accept('./components/App/App.js', () => {
@@ -37,4 +38,8 @@ function render() {
 		</Provider>,
 		document.getElementById('root')
 	);
+}
+
+function init() {
+	store.dispatch(getAllTodos());
 }

@@ -4,21 +4,22 @@ import TodoItem from '../TodoItem/TodoItem.js';
 
 import 'TodoList.scss';
 
-export default connect(
-  (s, p) => {
-    return { todoItems: s.todos };
-  }
-)
-(class TodoList extends Component {
+class TodoList extends Component {
   constructor() {
     super();
   }
 
   render() {
+    const { todoItems } = this.props;
+    console.log(todoItems);
     return (
       <ul className="todo__list-items">
         {this.props.todoItems && this.props.todoItems.map((el, i) => <TodoItem {...el} key={i}/>)}
       </ul>
     );
   }
-});
+};
+
+export default connect(
+  (state) => ({todoItems: state.todos })
+)(TodoList);

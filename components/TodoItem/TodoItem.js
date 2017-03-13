@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { deleteTodo } from '../../actions/index.js'
+import { deleteTodo } from '../../actions/todos.js'
 import 'TodoItem.scss';
 
 export default connect()
