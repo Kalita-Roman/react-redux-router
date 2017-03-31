@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import { deleteTodo } from '../../actions/todos.js'
+import { connect } from 'react-redux';
+import { deleteTodo } from '../../actions/todos.js';
 import 'TodoItem.scss';
 
 export default connect()
@@ -26,6 +26,6 @@ export default connect()
             <button className="todo__list-items__item__controls_button delete" onClick={this.onDelete}>delete</button>
           </div>
         </li>
-      );
+      )
     }
   })

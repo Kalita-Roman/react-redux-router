@@ -32,4 +32,4 @@ class AddTodoItem extends Component {
 
 export default connect(
   state => ({ loading: true })
-)(AddTodoItem);
+)(AddTodoItem)

@@ -14,12 +14,12 @@ class TodoList extends Component {
     console.log(todoItems);
     return (
       <ul className="todo__list-items">
-        {this.props.todoItems && this.props.todoItems.map((el, i) => <TodoItem {...el} key={i}/>)}
+        {this.props.todoItems && this.props.todoItems.map((el, i) => <TodoItem {...el} key={i} />)}
       </ul>
     );
   }
 };
 
 export default connect(
-  (state) => ({todoItems: state.todos })
-)(TodoList);
+  (state) => ({ todoItems: state.todos })
+)(TodoList)

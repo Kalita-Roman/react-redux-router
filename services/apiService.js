@@ -36,5 +36,5 @@ function getTodosFromStorage() {
   if (!todos || !Array.isArray(todos)) {
     todos = [];
   }
-  return todos;
+  return todos
 }
