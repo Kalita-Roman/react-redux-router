@@ -11,12 +11,6 @@ import { getAllTodos } from './actions/todos.js'
 
 import api from 'services/apiService.js';
 
-/*const preloadedState = {
-	todos: [
-		{ text: 'first', id: 1 },
-	]
-}*/
-
 const store = createStore(reducers, (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose)(applyMiddleware(thunkMiddleware)));
 
 render();
