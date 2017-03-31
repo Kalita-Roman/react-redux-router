@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux'
-import { createStore, applyMiddleware, compose } from 'redux'
-import thunkMiddleware from 'redux-thunk'
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunkMiddleware from 'redux-thunk';
 import { AppContainer } from 'react-hot-loader';
-import reducers from './reducers'
-import './style/main.scss'
+import reducers from './reducers';
+import './style/main.scss';
 
-import { getAllTodos } from './actions/todos.js'
+import { getAllTodos } from './actions/todos.js';
 
 import api from 'services/apiService.js';
 
@@ -17,14 +17,14 @@ render();
 init();
 
 if (module.hot) {
-	module.hot.accept('./components/App/App.js', () => {
-		render();
-	});
+  module.hot.accept('./components/App/App.js', () => {
+    render();
+  });
 }
 
-function render() {
-	const App = require('./components/App/App.js').default;
-	ReactDOM.render(
+function render () {
+  const App = require('./components/App/App.js').default;
+  ReactDOM.render(
 		<Provider store={store}>
 			<AppContainer>
 				<App />
@@ -34,6 +34,6 @@ function render() {
 	);
 }
 
-function init() {
-	store.dispatch(getAllTodos());
+function init () {
+  store.dispatch(getAllTodos());
 }
